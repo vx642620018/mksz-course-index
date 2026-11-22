@@ -1,0 +1,31 @@
+name: update-readme
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"      # 每周一 03:00 UTC（北京时间 11:00）
+  workflow_dispatch:          # 也可手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 生成 README
+        run: python tools/make_readme.py
+      - name: 有变化就提交
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain README.md)" ]; then
+            git add README.md
+            git commit -m "chore: 自动更新课程编号对照表"
+            git push
+          else
+            echo "README 无变化"
+          fi

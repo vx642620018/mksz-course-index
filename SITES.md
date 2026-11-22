@@ -525,6 +525,7 @@
 
 - https://jike.vx642620018.top/
 - https://jike.vx642620018.top/courses/
+- https://jike.vx642620018.top/map/
 - https://jike.vx642620018.top/progress/
 
 ### 课程页（全量）

@@ -483,4 +483,4 @@
 - 新增课程：往 `data/courses.json` 追加一条 `{"id": "1234", "name": "课程名"}`，然后跑一次脚本（本地或等 GitHub Actions 自动跑）。
 - GitHub Actions 每周一 03:00 UTC 自动重新生成并提交；也可在 Actions 页面手动 `Run workflow`。
 
-_最后生成：2026-11-22_
+_最后生成：2026-11-23_
